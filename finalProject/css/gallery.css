@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: #585858;
+		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-size: 16pt;
+		font-weight: 300;
+		line-height: 1.75;
+}
+ 
+a:hover {
+  border-bottom-color: transparent;
+  color: #8b84f2 !important;
+}
+.main {
+  display: flex;
+  overflow: hidden;
+  height: 50vw;
+  background: #333;
+}
+ 
+.main img {
+  max-width: 100%;
+  vertical-align: middle;
+  border: 2px solid white;
+  box-sizing: border-box;
+  transition: opacity .2s;
+}
+ 
+.main:hover img {
+  opacity: 0.5;
+}
+ 
+.main img:hover {
+  opacity: 1;
+}
+ 
+.main .single-column {
+	animation: var(--animation, none) 16s infinite linear;
+}
+ 
+.main .single-column:hover {
+	animation-play-state: paused;
+}
+ 
+.main .single-column:nth-of-type(odd) {
+  align-self: flex-end;
+  --direction: 50%;
+}
+ 
+@keyframes slide {
+  to {
+    -webkit-transform: translateY(var(--direction, -50%));
+            transform: translateY(var(--direction, -50%));
+  }
+}
